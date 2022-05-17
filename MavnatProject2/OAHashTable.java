@@ -2,9 +2,12 @@
 public abstract class OAHashTable implements IHashTable {
 	
 	private HashTableElement [] table;
-	
+	protected int m;
+	ModHash hash;
 	public OAHashTable(int m) {
 		this.table = new HashTableElement[m];
+		this.m = m;
+		this.hash = new ModHash();
 	}
 	
 	
