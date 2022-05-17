@@ -10,6 +10,6 @@ public class AQPHashTable extends OAHashTable {
 	@Override
 	public int Hash(long x, int i) {
 		double pos = hash.Hash(x)+Math.pow(-1,i)*Math.pow(i,2);
-		return (int)(pos+this.m)%this.m;
+		return (int)(pos%this.m+this.m)%this.m;
 	}
 }
