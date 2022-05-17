@@ -7,7 +7,7 @@ public abstract class OAHashTable implements IHashTable {
 	public OAHashTable(int m, long p) {
 		this.table = new HashTableElement[m];
 		this.m = m;
-		this.hash = new ModHash.GetFunc(m, p);
+		this.hash = ModHash.GetFunc(m, p);
 	}
 	
 	
