@@ -85,9 +85,13 @@ public class Test {
         // ^^^^^^^^^^ //
 
         Random rng = new Random();
+        rng.setSeed(10);
         RealHashTable rht = new RealHashTable(15, 97);
 
         for (int i = 0; i < 2000; i++) {
+            if (i==19) {
+                int x = 0;
+            }
             // choose random operation
             int randomOperation = rng.nextInt(3);  // insert delete or find
             long key = rng.nextInt(20);

@@ -1,5 +1,5 @@
 import java.util.Random;
-
+//Dvir's function:
 public class DoubleHashTable extends OAHashTable {
 	private ModHash otherHash;
 	private ModHash hash;
@@ -11,7 +11,7 @@ public class DoubleHashTable extends OAHashTable {
 	
 	@Override
 	public int Hash(long x, int i) {
-		return (this.hash.Hash(x)+i* otherHash.Hash(x));
+		return (this.hash.Hash(x)+i* otherHash.Hash(x))%m;
 
 	}
 	
