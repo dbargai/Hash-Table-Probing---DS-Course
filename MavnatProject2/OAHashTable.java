@@ -3,11 +3,9 @@ public abstract class OAHashTable implements IHashTable {
 	
 	private HashTableElement [] table;
 	protected int m;
-	protected ModHash hash;
-	public OAHashTable(int m, long p) {
+	public OAHashTable(int m) {
 		this.table = new HashTableElement[m];
 		this.m = m;
-		this.hash = ModHash.GetFunc(m, p);
 	}
 	
 	
