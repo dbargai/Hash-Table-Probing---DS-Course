@@ -5,24 +5,47 @@ public abstract class OAHashTable implements IHashTable {
 	
 	public OAHashTable(int m) {
 		this.table = new HashTableElement[m];
-		// TODO add to constructor as needed
 	}
 	
 	
 	@Override
 	public HashTableElement Find(long key) {
-		// TODO implement find
+		for (int i=0; i<table.length; i++) {
+			int j = Hash(key, i);
+			if (table[j] == null)
+				return null;
+			else {
+				if (table[j].GetKey() == key)
+					return table[j];
+			}
+		}
 		return null;
 	}
 	
 	@Override
 	public void Insert(HashTableElement hte) throws TableIsFullException,KeyAlreadyExistsException {
-		// TODO implement insertion	
+		for (int i=0; i<table.length; i++) {
+			int j = Hash(hte.GetKey(), i);
+			if (table[j] == null) {
+				if (table[j].GetKey() == hte.GetKey())
+					throw new KeyAlreadyExistsException(hte);
+			}
+			else {
+				table[j] = hte;
+				return;
+			}
+		}
+		throw new TableIsFullException(hte);
 	}
 	
 	@Override
 	public void Delete(long key) throws KeyDoesntExistException {
-		// TODO implement deletion
+		for (int i=0; i<table.length; i++){
+			int j = Hash(key, i);
+			if (table[j].GetKey()==key)
+				table[j] = new HashTableElement(-1,-1);
+		}
+		throw new KeyDoesntExistException(key);
 	}
 	
 	/**
