@@ -129,16 +129,11 @@ public class theoretical_part {
                 aqpht.Insert(new HashTableElement(Ai, 0));
                 endTime = System.nanoTime();
                 aqphtTime += endTime - startTime;
-                try {
-                    startTime = System.nanoTime();
 
-                    dht.Insert(new HashTableElement(Ai, 0));
-                    endTime = System.nanoTime();
-                    dhtTime += endTime - startTime;
-                }
-                catch (Exception e){
-                    System.out.println("");
-                }
+                startTime = System.nanoTime();
+                dht.Insert(new HashTableElement(Ai, 0));
+                endTime = System.nanoTime();
+                dhtTime += endTime - startTime;
             }
         }
 
@@ -166,12 +161,7 @@ public class theoretical_part {
                     Bi = random.nextInt(100);
                     Ai = 100 * i + Bi;
                     A.add(Ai);
-                    try{
-                        dht.Insert(new HashTableElement(Ai, 0));
-                    }
-                    catch(Exception e){
-                        System.out.println("");
-                    }
+                    dht.Insert(new HashTableElement(Ai, 0));
                 }
 
                 // Deleting every a in A from dht
