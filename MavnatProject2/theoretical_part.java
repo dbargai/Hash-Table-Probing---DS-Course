@@ -20,7 +20,6 @@ public class theoretical_part {
         System.out.println("\n###### Q3b ######");
         System.out.println("## QPHashTable ##");
         Random random = new Random();
-        random.setSeed(30);
         int i = 0;
         int j = 0;
         int failCnt = 0;
@@ -70,7 +69,7 @@ public class theoretical_part {
 
         int n = (int) Math.floor(10000019/2);
         double startTime, endTime, lphtTime = 0, qphtTime = 0, aqphtTime = 0, dhtTime = 0;
-        /*for (j = 0; j < 10; j++) {
+        for (j = 0; j < 10; j++) {
             lpht = new LPHashTable(10000019, 1000000007);
             qpht = new QPHashTable(10000019, 1000000007);
             aqpht = new AQPHashTable(10000019, 1000000007);
@@ -105,15 +104,15 @@ public class theoretical_part {
         System.out.println(String.format("QPHashTable total runtime (avg over 10 experiments) in seconds: %s", (qphtTime/10)/Math.pow(10, 9)));
         System.out.println(String.format("AQPHashTable total runtime (avg over 10 experiments) in seconds: %s", (aqphtTime/10)/Math.pow(10, 9)));
         System.out.println(String.format("DoubleHashTable total runtime (avg over 10 experiments) in seconds: %s", (dhtTime/10)/Math.pow(10, 9)));
-*/
-/*
+
+
         System.out.println("\n###### Q4b ######");
 
         n = (int) Math.floor((19*10000019)/20);
         lphtTime = 0;
         aqphtTime = 0;
         dhtTime = 0;
-        for (j = 0; j < 5; j++) {
+        for (j = 0; j < 10; j++) {
             lpht = new LPHashTable(10000019, 1000000007);
             aqpht = new AQPHashTable(10000019, 1000000007);
             dht = new DoubleHashTable(10000019, 1000000007);
@@ -130,23 +129,18 @@ public class theoretical_part {
                 aqpht.Insert(new HashTableElement(Ai, 0));
                 endTime = System.nanoTime();
                 aqphtTime += endTime - startTime;
-                try {
-                    startTime = System.nanoTime();
 
-                    dht.Insert(new HashTableElement(Ai, 0));
-                    endTime = System.nanoTime();
-                    dhtTime += endTime - startTime;
-                }
-                catch (Exception e){
-                    System.out.println("");
-                }
+                startTime = System.nanoTime();
+                dht.Insert(new HashTableElement(Ai, 0));
+                endTime = System.nanoTime();
+                dhtTime += endTime - startTime;
             }
         }
 
         System.out.println(String.format("LPHashTable total runtime (avg over 10 experiments) in seconds: %s", (lphtTime/10)/Math.pow(10, 9)));
         System.out.println(String.format("AQPHashTable total runtime (avg over 10 experiments) in seconds: %s", (aqphtTime/10)/Math.pow(10, 9)));
         System.out.println(String.format("DoubleHashTable total runtime (avg over 10 experiments) in seconds: %s", (dhtTime/10)/Math.pow(10, 9)));
-*/
+
         System.out.println("\n###### Q5 ######");
 
         n = (int) Math.floor(10000019/2);
@@ -167,12 +161,7 @@ public class theoretical_part {
                     Bi = random.nextInt(100);
                     Ai = 100 * i + Bi;
                     A.add(Ai);
-                    try{
-                        dht.Insert(new HashTableElement(Ai, 0));
-                    }
-                    catch(Exception e){
-                        System.out.println("");
-                    }
+                    dht.Insert(new HashTableElement(Ai, 0));
                 }
 
                 // Deleting every a in A from dht
