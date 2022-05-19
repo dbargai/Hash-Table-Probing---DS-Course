@@ -13,6 +13,7 @@ public class DoubleHashTable extends OAHashTable {
 	public int Hash(long x, int i) {
 		return (int)((long)this.hash.Hash(x)+(long)i * (long)(otherHash.Hash(x)+1))%m;
 
+
 	}
 	
 }
