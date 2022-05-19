@@ -10,7 +10,7 @@ public class LPHashTable extends OAHashTable {
 
 	@Override
 	public int Hash(long x, int i) {
-		return (hash.Hash(x)+i)%(this.m);
+		return (int)(((long)hash.Hash(x)+i)%((long)this.m));
 	}
 
 }
