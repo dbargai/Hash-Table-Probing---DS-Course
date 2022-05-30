@@ -8,10 +8,11 @@ public class theoretical_part {
     public static void main(String[] args) throws IHashTable.KeyDoesntExistException, IHashTable.KeyAlreadyExistsException, IHashTable.TableIsFullException {
         Set<Long> Q1 = new HashSet<Long>();
         Set<Long> Q2 = new HashSet<Long>();
-        long q = 6571;
+        long q = 7;
+        //long q = 19;
         for (int i = 0; i < q; i++) {
             Q1.add((long)Math.pow(i, 2) % q);
-            Q2.add(((long)Math.pow(-1, i)*(long)Math.pow(i, 2))%q);
+            Q2.add(((((long)Math.pow(-1, i)*(long)Math.pow(i, 2))%q)+q)%q);
         }
         System.out.println("###### Q3a ######");
         System.out.println(String.format("Size of Q1 is: %s",Q1.size()));
