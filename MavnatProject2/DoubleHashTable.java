@@ -1,5 +1,15 @@
+//Student 1:
+//name: Dvir Bargai
+//ID: 208772715
+//username: dvirbargai
+
+//Student 2:
+//name: Or Shemesh
+//ID: 208992883
+//username: orshemesh
+
 import java.util.Random;
-//Dvir's function:
+
 public class DoubleHashTable extends OAHashTable {
 	private ModHash otherHash;
 	private ModHash hash;
