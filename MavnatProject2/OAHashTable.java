@@ -1,12 +1,3 @@
-//Student 1:
-//name: Dvir Bargai
-//ID: 208772715
-//username: dvirbargai
-
-//Student 2:
-//name: Or Shemesh
-//ID: 208992883
-//username: orshemesh
 
 public abstract class OAHashTable implements IHashTable {
 	
